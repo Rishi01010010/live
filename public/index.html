@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Video Streaming</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Live Video Streaming</h1>
+    
+    <div class="video-section">
+      <div class="local-stream">
+        <h2>Your Camera</h2>
+        <video id="localVideo" autoplay muted></video>
+        <div class="controls">
+          <button id="startButton">Start Streaming</button>
+          <button id="stopButton" disabled>Stop Streaming</button>
+        </div>
+      </div>
+      
+      <div class="remote-streams" id="remoteStreams">
+        <h2>Other Streams</h2>
+        <div class="streams-container" id="streamsContainer">
+          <p class="no-streams">No active streams yet</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="status">
+      <p id="connectionStatus">Not connected</p>
+      <p id="activeUsers">Active users: 0</p>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
